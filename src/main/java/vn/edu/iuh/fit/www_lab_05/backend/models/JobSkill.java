@@ -8,12 +8,12 @@ import vn.edu.iuh.fit.www_lab_05.backend.enums.SkillLevel;
 public class JobSkill {
     @Id
     @ManyToOne
-    @JoinColumn(name = "job_id", columnDefinition = "bigint(20)")
+    @JoinColumn(name = "job_id")
     private Job job;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "skill_id", columnDefinition = "bigint(20)")
+    @JoinColumn(name = "skill_id")
     private Skill skill;
 
     @Column(name = "shill_level", columnDefinition = "tinyint(4)")

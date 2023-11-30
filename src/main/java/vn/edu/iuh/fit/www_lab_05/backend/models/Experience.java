@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "exp_id", columnDefinition = "bigint(20)")
+    @Column(name = "exp_id")
     private long id;
 
     @Column(name = "to_date", columnDefinition = "date")

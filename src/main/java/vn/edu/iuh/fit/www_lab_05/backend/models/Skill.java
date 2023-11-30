@@ -10,7 +10,7 @@ import java.util.List;
 public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "skill_id", columnDefinition = "bigint(20)")
+    @Column(name = "skill_id")
     private long id;
 
     @Column(name = "skill_type", columnDefinition = "tinyint(4)")

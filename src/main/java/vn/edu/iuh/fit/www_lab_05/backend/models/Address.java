@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit.www_lab_05.backend.models;
 
+import com.neovisionaries.i18n.CountryCode;
 import jakarta.persistence.*;
 import vn.edu.iuh.fit.www_lab_05.backend.enums.Country;
 
@@ -8,14 +9,14 @@ import vn.edu.iuh.fit.www_lab_05.backend.enums.Country;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "add_id", columnDefinition = "bigint(20)")
+    @Column(name = "add_id")
     private long id;
 
     @Column(name="city", columnDefinition = "varchar(50)")
     private String city;
 
     @Column(name="country", columnDefinition = "smallint(6)")
-    private Country country;
+    private CountryCode countryCode;
 
     @Column(name="zipcode", columnDefinition = "varchar(7)")
     private String zipcode;
@@ -26,19 +27,22 @@ public class Address {
     @Column(name="number", columnDefinition = "varchar(20)")
     private String number;
 
-//    @OneToMany()
-//    private Company company;
-//
-//    @OneToMany(mappedBy = "address")
-//    private Candidate candidate;
+
+    public Address(String number, String street, String city, String zipcode, CountryCode countryCode) {
+        this.city = city;
+        this.countryCode = countryCode;
+        this.zipcode = zipcode;
+        this.street = street;
+        this.number = number;
+    }
 
     public Address() {
     }
 
-    public Address(long id, String city, Country country, String zipcode, String street, String number) {
+    public Address(long id, String city, CountryCode countryCode, String zipcode, String street, String number) {
         this.id = id;
         this.city = city;
-        this.country = country;
+        this.countryCode = countryCode;
         this.zipcode = zipcode;
         this.street = street;
         this.number = number;
@@ -60,12 +64,12 @@ public class Address {
         this.city = city;
     }
 
-    public Country getCountry() {
-        return country;
+    public CountryCode getCountryCode() {
+        return countryCode;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setCountryCode(CountryCode countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getZipcode() {
@@ -97,7 +101,7 @@ public class Address {
         return "Address{" +
                 "id=" + id +
                 ", city='" + city + '\'' +
-                ", country=" + country +
+                ", countryCode=" + countryCode +
                 ", zipcode='" + zipcode + '\'' +
                 ", street='" + street + '\'' +
                 ", number='" + number + '\'' +

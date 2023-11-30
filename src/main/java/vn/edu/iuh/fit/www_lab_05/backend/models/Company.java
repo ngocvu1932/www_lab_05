@@ -9,7 +9,7 @@ import java.util.List;
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "com_id", columnDefinition = "bigint(20)")
+    @Column(name = "com_id")
     private long id;
 
     @Column(name = "comp_name", columnDefinition = "varchar(255)")

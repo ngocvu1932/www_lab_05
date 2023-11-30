@@ -10,7 +10,7 @@ import java.util.List;
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="can_id", columnDefinition = "bigint(20)")
+    @Column(name="can_id")
     private long id;
 
     @Column(name="phone", columnDefinition = "varchar(15)")
@@ -36,6 +36,8 @@ public class Candidate {
     private List<Experience> experiences;
 
 
+//    public Candidate(String s, LocalDate localDate, Address add, String string, String s1) {
+
     public Candidate() {
     }
 
@@ -46,6 +48,14 @@ public class Candidate {
         this.email = email;
         this.fullName = fullName;
         this.address = address;
+    }
+
+    public Candidate(String fullName, LocalDate dob, Address address, String phone, String email) {
+        this.fullName = fullName;
+        this.dob = dob;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
     }
 
     public long getId() {

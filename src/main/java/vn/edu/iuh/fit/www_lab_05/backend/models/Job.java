@@ -8,7 +8,7 @@ import java.util.List;
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "job_id", columnDefinition = "bigint(20)")
+    @Column(name = "job_id")
     private long id;
 
     @Column(name = "job_name", columnDefinition = "varchar(255)")

@@ -36,6 +36,9 @@ dependencies {
     implementation 'com.neovisionaries:nv-i18n:1.29'
     //bootstrap
     implementation 'org.webjars:bootstrap:5.3.2'
+
+    //For database REST
+    implementation 'org.springframework.data:spring-data-rest-core:4.1.4'
 }
 
 tasks.named('bootBuildImage') {
